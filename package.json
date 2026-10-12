@@ -1,0 +1,16 @@
+{
+  "name": "bonewizardry-public-status-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node guard.mjs",
+    "test": "node --test tests/monitor.test.mjs tests/guard.test.mjs tests/report-status.test.mjs",
+    "run": "node monitor.mjs",
+    "capture": "node capture.mjs",
+    "report": "node report-status.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.0"
+  }
+}
