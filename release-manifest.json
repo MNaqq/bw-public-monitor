@@ -1,0 +1,18 @@
+{
+  "files": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    ".github/workflows/check.yml": "eb07a8f6f41e0ebf99f5229f9ee81f50ce8f7abe657aa5b63e293887b621294f",
+    ".github/workflows/monitor.yml": "7eabe9fed2fcd9eb3179e393a4bf4d7f9c6657d216a6334056eeda6f9dc98bf7",
+    "README.md": "3d7319e35dc3db583fa9deb21c95693edd801c7710418d3d74149ebf8327e8f9",
+    "capture.mjs": "bd5f60b00718f05299652948219e43d0dd696d10fb7a51b772b70b41d67a13a4",
+    "guard.mjs": "e941b9e2a044c558f8b8dc7929bb087a120c2560cce33af1fac8932cb7e1787d",
+    "monitor.mjs": "124b23f1292f6a408d6cb471c2794d04aa51a52215133518cc7ab855e4271410",
+    "package-lock.json": "7d615c6ec7344d2da5bc78616081efc8160e92d5f06e772a241a989b0a76705c",
+    "package.json": "1e1b2f1426d1374cf8a8c54484802dba05f0fb73adc60255b4dfac882b0138a3",
+    "report-status.mjs": "3580aec4f602d0676d4c011592e5c8695d3a426ccd2c47d158ed69f5818e084f",
+    "tests/guard.test.mjs": "6c2ceeca06845663bab7dbd1f46e03b77e6161e3e9040e5b45b2a4bbad36f410",
+    "tests/monitor.test.mjs": "e5fe6332e07e5ce48ea7bc8f452fdd6259f3eb2b49493329e0c28a71c632e8a4",
+    "tests/report-status.test.mjs": "471c4a24721f9bb55e1a9a5ac239377db4b9c6f43e21c0caea579989a0dd5a09"
+  },
+  "schema": "public-monitor-boundary/v1"
+}

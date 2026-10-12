@@ -1,5 +1,9 @@
-# Bone Wizardry public status monitor
+# Bone Wizardry public-status monitor
 
-Standalone repository for anonymous uptime, public-link, and daily screenshot checks of approved pages on `bonewizardry.com`.
+This standalone repository contains only the public monitor bundle from the main repository’s `public-monitor/` directory, exported at this repository root. It probes `https://bonewizardry.com/`, `/start`, and `/pricing` without authentication, cookies, or page-body logging. It reads at most 2 MiB of each successful landing-page HTML response in memory to find unique same-origin links, then checks those links with anonymous `HEAD`; external, insecure, account, authentication, administration, lesson, QBank, billing, API, and CDN email-protection paths are excluded, and query strings and fragments are stripped before checking. Page paths and HTTP statuses are the only check details retained.
 
-Only the public monitoring bundle will be added here. Private application source, account data, paid lessons, question-bank samples, and credentials are out of scope.
+GitHub Actions checks the public pages and discovered links every 30 minutes. A daily scheduled run and manual `workflow_dispatch` capture the three approved pages at mobile and desktop sizes in a fresh anonymous browser context. Screenshots are GitHub artifacts retained for three days; status-only JSON artifacts are retained for one day. The workflow never deploys or writes to the main website. A failing check opens one status-only GitHub issue, and recovery comments on and closes that issue.
+
+Local checks: `npm install --ignore-scripts --no-audit --no-fund`, `npm test`, `npm run check`, `npm run run`. To capture screenshots locally, install Chromium with `npx playwright install chromium` and run `npm run capture`. Reports and screenshots go to the operating-system temporary directory unless `BW_MONITOR_OUTPUT_DIR` is set. `node guard.mjs` enforces the exact public export allowlist and SHA-256 review manifest.
+
+Scope is intentionally limited to public page availability and same-origin public links. No lesson, QBank, login, billing, student, or private application source is included.
