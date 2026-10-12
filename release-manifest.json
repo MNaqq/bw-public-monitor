@@ -2,7 +2,7 @@
   "files": {
     ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
     ".github/workflows/check.yml": "eb07a8f6f41e0ebf99f5229f9ee81f50ce8f7abe657aa5b63e293887b621294f",
-    ".github/workflows/monitor.yml": "7eabe9fed2fcd9eb3179e393a4bf4d7f9c6657d216a6334056eeda6f9dc98bf7",
+    ".github/workflows/monitor.yml": "57d4faf916b588309a472488c00082beded4789b1363f1874077f2ec78798d83",
     "README.md": "3d7319e35dc3db583fa9deb21c95693edd801c7710418d3d74149ebf8327e8f9",
     "capture.mjs": "bd5f60b00718f05299652948219e43d0dd696d10fb7a51b772b70b41d67a13a4",
     "guard.mjs": "e941b9e2a044c558f8b8dc7929bb087a120c2560cce33af1fac8932cb7e1787d",

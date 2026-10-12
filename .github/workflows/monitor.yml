@@ -21,8 +21,6 @@ jobs:
     outputs:
       monitor_outcome: ${{ steps.monitor.outcome }}
       capture_outcome: ${{ steps.capture.outcome }}
-    env:
-      BW_MONITOR_OUTPUT_DIR: ${{ runner.temp }}/bw-public-monitor
     steps:
       - uses: actions/checkout@v4
         with:
@@ -40,9 +38,13 @@ jobs:
         run: npm run check
       - name: Check public pages and links
         id: monitor
+        env:
+          BW_MONITOR_OUTPUT_DIR: ${{ runner.temp }}/bw-public-monitor
         run: npm run run
       - name: Capture anonymous screenshots
         id: capture
+        env:
+          BW_MONITOR_OUTPUT_DIR: ${{ runner.temp }}/bw-public-monitor
         if: ${{ always() && (github.event_name == 'workflow_dispatch' || github.event.schedule == '0 8 * * *') && steps.setup-node.outcome == 'success' && steps.install.outcome == 'success' }}
         run: |
           npx playwright install --with-deps chromium
@@ -74,8 +76,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    env:
-      BW_MONITOR_OUTPUT_DIR: ${{ runner.temp }}/bw-public-monitor
     steps:
       - uses: actions/checkout@v4
         with:
@@ -95,4 +95,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           MONITOR_OUTCOME: ${{ needs.monitor.outputs.monitor_outcome }}
           CAPTURE_OUTCOME: ${{ needs.monitor.outputs.capture_outcome }}
+          BW_MONITOR_OUTPUT_DIR: ${{ runner.temp }}/bw-public-monitor
         run: node report-status.mjs
